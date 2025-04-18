@@ -16,7 +16,7 @@ def Bit_Flip(s: str) -> str:
 
 def main():
     print(f"""
-    Odd_Even_Swap("134567890"): {Odd_Even_Swap("1234567890")}
+    Odd_Even_Swap("1234567890"): {Odd_Even_Swap("1234567890")}
     Odd_Even_Swap(Odd_Even_Swap("1234567890")): {Odd_Even_Swap(Odd_Even_Swap("1234567890"))}
     Reverse("1234567890"): {Reverse("1234567890")}
     Reverse(Reverse("1234567890")): {Reverse(Reverse("1234567890"))}
