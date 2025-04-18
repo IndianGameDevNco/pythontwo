@@ -1,0 +1,13 @@
+{% extends 'base.html' %} {% block title %} Wibyte Level 2 {% endblock %} {%
+block css %} {{ url_for('static', filename='css/index.css') }} {% endblock %} {%
+block main %}
+<section id="header">
+	<article id="heading">
+		<h1>Wibyte Level 2 Projects</h1>
+		<p>Welcome to my Wibyte Level 2 Projects page!</p>
+	</article>
+</section>
+<section id="btn-group">
+	<a href="/sm-1" class="btn">Secret Messages 1</a>
+</section>
+{% endblock %}

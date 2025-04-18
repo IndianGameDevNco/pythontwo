@@ -1,0 +1,75 @@
+{% extends 'base.html' %} {% block title %}Secret Messages 1{% endblock %} {%
+block css %} {{ url_for('static', filename='css/sm-1.css') }} {% endblock %} {%
+block js %}
+<script src="{{ url_for('static', filename='js/sm-1.mjs' ) }}"></script>
+{% endblock %} {% block main %}
+<section id="header">
+	<article id="heading">
+		<h1>Secret Messages 1</h1>
+		<p>Encode or Decode your text like a <em>master</em></p>
+	</article>
+	<p class="warning">
+		⚠️ Decoding varies based on the algorithm you choose. Make sure you pick the
+		correct one!
+	</p>
+</section>
+<section id="form-section">
+	<form action="" id="form" method="post">
+		<div class="toggle-group">
+			<input type="radio" id="encode" name="mode" value="encode" checked />
+			<label for="encode" class="toggle-label">Encode</label>
+
+			<input type="radio" id="decode" name="mode" value="decode" />
+			<label for="decode" class="toggle-label">Decode</label>
+		</div>
+
+		<br /><br />
+
+		<div class="toggle-group">
+			<input
+				type="radio"
+				id="Odd_Even_Swap"
+				name="algorithm"
+				value="Odd_Even_Swap"
+			/>
+			<label for="Odd_Even_Swap" class="toggle-label"
+				>Even Odd Letter Swap</label
+			>
+
+			<input
+				type="radio"
+				id="Reverse"
+				name="algorithm"
+				value="Reverse"
+				checked
+			/>
+			<label for="Reverse" class="toggle-label">Reverse</label>
+
+			<input
+				type="radio"
+				id="Reverse_Word"
+				name="algorithm"
+				value="Reverse_Word"
+			/>
+			<label for="Reverse_Word" class="toggle-label">Reverse Word</label>
+
+			<input type="radio" id="Half_Swap" name="algorithm" value="Half_Swap" />
+			<label for="Half_Swap" class="toggle-label">Half Swap</label>
+
+			<input type="radio" id="Bit_Flip" name="algorithm" value="Bit_Flip" />
+			<label for="Bit_Flip" class="toggle-label">Bit Flip</label>
+		</div>
+
+		<br /><br />
+		<textarea
+			name="text"
+			rows="8"
+			cols="50"
+			placeholder="Enter your text..."
+		></textarea>
+		<br /><br />
+		<button id="go" type="submit" style="width: 50px"></button>
+	</form>
+</section>
+
+{% endblock %}
