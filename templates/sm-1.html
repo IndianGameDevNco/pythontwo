@@ -1,7 +1,7 @@
 {% extends 'base.html' %} {% block title %}Secret Messages 1{% endblock %} {%
-block css %} {{ url_for('static', filename='css/sm-1.css') }} {% endblock %} {%
+block css %} {{ url_for('static', filename='css/sm.css') }} {% endblock %} {%
 block js %}
-<script src="{{ url_for('static', filename='js/sm-1.mjs' ) }}"></script>
+<script src="{{ url_for('static', filename='js/sm.mjs' ) }}"></script>
 {% endblock %} {% block main %}
 <section id="header">
 	<article id="heading">
@@ -58,17 +58,29 @@ block js %}
 
 			<input type="radio" id="Bit_Flip" name="algorithm" value="Bit_Flip" />
 			<label for="Bit_Flip" class="toggle-label">Bit Flip</label>
+
+			<input
+				type="radio"
+				id="Black_Hole_Cipher"
+				name="algorithm"
+				value="Black_Hole_Cipher"
+			/>
+			<label for="Black_Hole_Cipher" class="toggle-label"
+				>Black Hole Cipher (Can't be decoded)</label
+			>
 		</div>
 
 		<br /><br />
 		<textarea
+			id="text-area"
 			name="text"
 			rows="8"
 			cols="50"
+			maxlength="10000000"
 			placeholder="Enter your text..."
 		></textarea>
 		<br /><br />
-		<button id="go" type="submit" style="width: 50px"></button>
+		<button id="go" type="submit"></button>
 	</form>
 </section>
 

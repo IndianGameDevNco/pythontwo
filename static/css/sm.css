@@ -24,7 +24,7 @@ h1 {
 	color: #856404;
 	border-radius: 6px;
 	border: 1px solid #ffeeba;
-	max-width: 650px;
+	max-width: 700px;
 	font-size: 0.95rem;
 
 	/* Animation properties */
@@ -92,7 +92,6 @@ textarea {
 	font-size: 14px;
 	border-radius: 5px;
 	border: 1px solid #ccc;
-	width: 100%;
 	transition: border-color 0.3s;
 }
 
@@ -100,7 +99,16 @@ textarea:focus {
 	border-color: #007bff;
 }
 
+#text-area {
+	width: 80%;
+}
+
+#header-area {
+	width: 50%;
+}
+
 button {
+	width: 50px;
 	min-width: 100px;
 	padding: 10px 20px;
 	font-size: 16px;
