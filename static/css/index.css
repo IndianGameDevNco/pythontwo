@@ -10,8 +10,7 @@ h1 {
 	font-size: 2.5rem;
 	margin-top: 0;
 	margin-bottom: 1rem;
-	padding: 10px;
-	padding-top: 0;
+	padding: 0 10px 10px;
 }
 
 #heading p {
@@ -47,7 +46,6 @@ footer {
 	left: 0;
 	bottom: 0;
 	width: 100%;
-	color: white;
 	text-align: center;
 	margin-top: 2rem;
 	font-size: 0.9rem;
