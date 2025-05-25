@@ -9,13 +9,12 @@ load_dotenv(dotenv_path=env_path)
 reg = UnitRegistry()
 Q__ = reg.Quantity
 
-API_URL: str = f'https://api.freecurrencyapi.com/v1/latest?apikey={getenv('API_KEY')}'
+API_URL: str = f'https://api.freecurrencyapi.com/v1/latest?apikey={getenv("API_KEY")}'
 
 units: dict[str, list[str]] = {
     'length': ['mm', 'cm', 'm', 'km'],
     'capacity': ['ML', 'L'],
     'temperature': ['celsius' ,'fahrenheit', 'kelvin'],
-    'data': ['KB', 'MB', 'GB'],
     'currency': ['USD', 'INR', 'AUD', 'CAD', 'CHF']
 }
 
