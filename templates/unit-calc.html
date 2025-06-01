@@ -1,26 +1,39 @@
-{% extends 'base.html' %}
-{% block title %}Unit Converter{% endblock %}
-{% block css %} {{ url_for('static', filename='css/midterm.css') }} {% endblock %}
-{% block js %} <script src="{{ url_for('static', filename='js/uc.mjs' ) }}"></script> {% endblock %}
-{% block main %}
+{% extends 'base.html' %} {% block title %}Unit Converter{% endblock %} {% block
+css %} {{ url_for('static', filename='css/midterm.css') }} {% endblock %} {%
+block js %}
+<script src="{{ url_for('static', filename='js/uc.mjs' ) }}"></script>
+{% endblock %} {% block main %}
 <section id="header">
-    <article id="heading">
-        <h1>Unit Converter</h1>
-        <p>Convert your units like a <em>master</em></p>
-    </article>
+  <article id="heading">
+    <h1>Unit Converter</h1>
+    <p>Convert your units like a <em>master</em></p>
+  </article>
 </section>
 <section id="form-section">
-    <form action="/units" id="form" method="post">
-        <textarea name="amount" id="amount-area" rows="1" cols="20" maxlength="10" placeholder="Amount"></textarea>
-        <br><br>
-        <div class="toggle-group">
-            {% for s in categories %}
-                <input type="radio" id="{{ s|e }}" name="category" value="{{ s|e }}" checked />
-                <label for="{{ s|e }}" class="toggle-label">{{ s.capitalize()|e }}</label>
-            {% endfor %}
-        </div>
-        <br><br>
-		<button id="go" type="submit">Go</button>
-    </form>
+  <form action="/units" id="form" method="post">
+    <textarea
+      name="amount"
+      id="amount-area"
+      rows="1"
+      cols="20"
+      maxlength="10"
+      placeholder="Amount"
+    ></textarea>
+    <br /><br />
+    <div class="toggle-group">
+      {% for s in categories %}
+      <input
+        type="radio"
+        id="{{ s|e }}"
+        name="category"
+        value="{{ s|e }}"
+        checked
+      />
+      <label for="{{ s|e }}" class="toggle-label">{{ s.capitalize()|e }}</label>
+      {% endfor %}
+    </div>
+    <br /><br />
+    <button id="go" type="submit">Go</button>
+  </form>
 </section>
 {% endblock %}
