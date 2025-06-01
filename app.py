@@ -1,9 +1,9 @@
-import sys
-from signal import SIGINT
-from os import path, kill, getpid
-sys.path.append(path.dirname(path.abspath(__file__)) + '/static/python')
 from flask import Flask, render_template, request, jsonify
-from static.python import algorithms, midterm
+from os import path, kill, getpid
+from signal import SIGINT
+import sys
+sys.path.append(path.dirname(path.abspath(__file__)) + '/static/python')
+from static.python import algorithms, midterm, mmt
 
 app = Flask(__name__)
 
@@ -70,3 +70,26 @@ def units():
 @app.route('/units/api')
 def units_api():
     return jsonify(midterm.units)
+
+@app.route('/dmrc-fare', methods=['GET', 'POST'])
+def calculate_fare_api():
+
+    network = mmt.Network()
+    network.load_from_json('./static/json/delhi_metro.json')
+    if request.method == 'POST':
+        data = request.get_json()
+        source = data.get('source')
+        destination = data.get('destination')
+
+        if not source or not destination:
+            return jsonify({"error": "Source and destination required"}), 400
+
+        try:
+            fare = network.calculate_fare(source, destination)
+            return jsonify({"fare": fare})
+        except ValueError as ve:
+            return jsonify({"error": str(ve)}), 400
+        except Exception as e:
+            return jsonify({"error": "Internal Server Error"}), 500
+    else:
+        return render_template('fare.html', stations=sorted(network.station_map.keys()))

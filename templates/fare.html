@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block title %}Fare Calculator{% endblock %}
+
+{% block css %}
+{{ url_for('static', filename='css/fare.css') }}
+{% endblock %}
+
+{% block js %}
+<script type="module" src="{{ url_for('static', filename='js/fare.mjs') }}"></script>
+{% endblock %}
+
+{% block main %}
+<section id="fare-container">
+  <h1>Delhi Metro Fare Calculator</h1>
+  <p class="warning">
+    ⚠️ Prices may be incorrect because of standardized pricing
+  </p>
+  <div class="selectors">
+    <select id="source">
+      {% for station in stations %}
+        <option value="{{ station }}">{{ station }}</option>
+      {% endfor %}
+    </select>
+
+    <select id="destination">
+      {% for station in stations %}
+        <option value="{{ station }}">{{ station }}</option>
+      {% endfor %}
+    </select>
+  </div>
+  <button id="calc-btn">Submit</button>
+</section>
+{% endblock %}

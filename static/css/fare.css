@@ -1,0 +1,87 @@
+/* Default styles for layout */
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+#fare-container {
+  max-width: 600px;
+  margin: 4rem auto;
+  padding: 2rem;
+  text-align: center;
+  background: white;
+  border-radius: 1rem;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.warning {
+  background-color: #fff3cd;
+  color: #856404;
+  border-radius: 6px;
+  border: 1px solid #ffeeba;
+  max-width: 700px;
+  font-size: 0.95rem;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.selectors {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+select {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid #ccc;
+  min-width: 150px;
+}
+
+button#calc-btn {
+  padding: 0.75rem 2rem;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 0.5rem;
+  background-color: #0077ff;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+button#calc-btn:hover {
+  background-color: #005ad6;
+}
+
+/* Fullscreen fare result mode */
+.fare-fullscreen {
+  position: fixed;
+  inset: 0;
+  background-color: red;
+  color: white;
+  font-size: 5rem;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  text-align: center;
+}
+
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 0.9rem;
+  color: #666;
+}
