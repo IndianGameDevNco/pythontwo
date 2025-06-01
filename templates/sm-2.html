@@ -1,54 +1,55 @@
-<script src="../static/js/uc.mjs"></script>{% extends 'base.html' %} {% block title %}Secret Messages 2{% endblock %} {%
+<script src="../static/js/uc.mjs"></script>
+{% extends 'base.html' %} {% block title %}Secret Messages 2{% endblock %} {%
 block css %} {{ url_for('static', filename='css/sm.css') }} {% endblock %} {%
 block js %}
 <script src="{{ url_for('static', filename='js/sm.mjs' ) }}"></script>
 {% endblock %} {% block main %}
 <section id="header">
-	<article id="heading">
-		<h1>Secret Messages 2</h1>
-		<p>Encode or Decode your text like a <em>master</em></p>
-	</article>
-	<p class="warning">
-		⚠️ Decoding varies based on the key and header you enter. Make sure you
-		choose the correct one!
-	</p>
+  <article id="heading">
+    <h1>Secret Messages 2</h1>
+    <p>Encode or Decode your text like a <em>master</em></p>
+  </article>
+  <p class="warning">
+    ⚠️ Decoding varies based on the key and header you enter. Make sure you
+    choose the correct one!
+  </p>
 </section>
 <section id="form-section">
-	<form action="" id="form" method="post">
-		<div class="toggle-group">
-			<input type="radio" id="encode" name="mode" value="encode" checked />
-			<label for="encode" class="toggle-label">Encode</label>
+  <form action="" id="form" method="post">
+    <div class="toggle-group">
+      <input type="radio" id="encode" name="mode" value="encode" checked />
+      <label for="encode" class="toggle-label">Encode</label>
 
-			<input type="radio" id="decode" name="mode" value="decode" />
-			<label for="decode" class="toggle-label">Decode</label>
-		</div>
+      <input type="radio" id="decode" name="mode" value="decode" />
+      <label for="decode" class="toggle-label">Decode</label>
+    </div>
 
-		<br /><br /><br />
+    <br /><br /><br />
 
-		<textarea
-			name="header"
-			id="header-area"
-			rows="1"
-			cols="20"
-			maxlength="18"
-			placeholder="Header (Max 18 chars)"
-		></textarea>
+    <textarea
+      name="header"
+      id="header-area"
+      rows="1"
+      cols="20"
+      maxlength="18"
+      placeholder="Header (Max 18 chars)"
+    ></textarea>
 
-		<br /><br />
+    <br /><br />
 
-		<textarea
-			name="text"
-			id="text-area"
-			rows="8"
-			cols="50"
-			maxlength="10000000"
-			placeholder="Enter your text..."
-		></textarea>
+    <textarea
+      name="text"
+      id="text-area"
+      rows="8"
+      cols="50"
+      maxlength="10000000"
+      placeholder="Enter your text..."
+    ></textarea>
 
-		<br /><br />
+    <br /><br />
 
-		<button id="go" type="submit"></button>
-	</form>
+    <button id="go" type="submit"></button>
+  </form>
 </section>
 
 {% endblock %}

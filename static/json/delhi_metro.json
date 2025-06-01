@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Rajiv Chowk",
+    "lines": ["Blue", "Yellow"],
+    "connecting": {
+      "Barakhamba Road": 1.2,
+      "Patel Chowk": 1.5
+    }
+  },
+  {
+    "name": "Barakhamba Road",
+    "lines": ["Blue"],
+    "connecting": {
+      "Rajiv Chowk": 1.2,
+      "Mandi House": 1.3
+    }
+  },
+  {
+    "name": "Patel Chowk",
+    "lines": ["Yellow"],
+    "connecting": {
+      "Rajiv Chowk": 1.5,
+      "Central Secretariat": 1.4
+    }
+  }
+]
